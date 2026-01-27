@@ -1,39 +1,47 @@
 import "./globals.css";
-import { Albert_Sans, Montserrat_Alternates } from "next/font/google";
+import { Albert_Sans, Montserrat_Alternates } from "next/font/google"
+import Image from "next/image";
 
-const albertSans = Albert_Sans({
-  subsets: ["latin"],
-  display: "swap",
-});
+const albertSans = Albert_Sans(
+  {
+    subsets: ["latin"],
+    display: "swap"
+  }
+)
 
 const montserratAlternates = Montserrat_Alternates({
   subsets: ["latin"],
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+  variable: "--font-montserrat-alternates"
+})
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log(albertSans);
+  console.log(albertSans)
   return (
     <html lang="en">
-      <body className={albertSans.className}>
+     <body className={`${albertSans.className} ${montserratAlternates.variable}` } >
         <header className="w-full bg-white">
-          <nav className="flex justify-between px-6 py-4">
+          <nav className="flex justify-between px-6 py-4"> 
             <div className="relative">
               {/* Desktop logo */}
-              <img
-                src="/printforge-logo 1.png"
+              <Image
+                src="/printforge-logo-1.png"
                 alt="PrintForge Logo"
+                width={200}
+                height={200}
                 className="w-[200px] h-auto hidden md:block"
               />
               {/* Mobile logo */}
-              <img
-                src="/printforge-logo-icon.svg"
+              <Image
+                src="/printforge-logo-mobile.png"
                 alt="PrintForge Logo"
+                width={200}
+                height={200}
                 className="w-[40px] h-auto block md:hidden"
               />
             </div>
