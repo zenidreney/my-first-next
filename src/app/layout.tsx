@@ -1,8 +1,7 @@
-import "./globals.css";
-import type { RootLayoutProps } from "@/app/types";
 import { Albert_Sans, Montserrat_Alternates } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
+import type { RootLayoutProps } from "@/app/types";
+import "./globals.css";
+import NavBar from "./components/NavBar";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -22,37 +21,8 @@ export default function RootLayout({
   console.log(albertSans);
   return (
     <html lang="en">
-      <body
-        className={`${albertSans.className} ${montserratAlternates.variable}`}
-      >
-        <header className="w-full bg-white">
-          <nav className="flex justify-between px-6 py-4">
-            <div className="relative">
-              <Link href={"/"}>
-                {/* Desktop logo */}
-                <Image
-                  src="/printforge-logo-1.png"
-                  alt="PrintForge Logo"
-                  width={200}
-                  height={200}
-                  className="w-[200px] h-auto hidden md:block"
-                />
-                {/* Mobile logo */}
-                <Image
-                  src="/printforge-logo-mobile.png"
-                  alt="PrintForge Logo"
-                  width={200}
-                  height={200}
-                  className="w-[40px] h-auto block md:hidden"
-                />
-              </Link>
-            </div>
-            <ul className="flex items-center gap-2.5">
-              <li className="text-sm uppercase cursor-pointer"><Link href={"/3d-models"}>3D Models</Link></li>
-              <li className="text-sm uppercase cursor-pointer"><Link href={"/about"}>About</Link></li>
-            </ul>
-          </nav>
-        </header>
+      <body className={`${albertSans.className} ${montserratAlternates.variable}`}>
+        <NavBar />
         {children}
       </body>
     </html>
