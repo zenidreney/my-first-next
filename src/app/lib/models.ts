@@ -1,5 +1,5 @@
 import modelsData from "../data/models.json"
-import type { Model } from "../types"
+//import type { Model } from "../types"
 
 export async function getAllModels() {
   // This is where you'd write code to fetch the list
