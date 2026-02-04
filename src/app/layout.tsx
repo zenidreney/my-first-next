@@ -18,7 +18,7 @@ const montserratAlternates = Montserrat_Alternates({
 export default function RootLayout({
   children,
 }: RootLayoutProps) {
-  console.log(albertSans);
+  console.log(children);
   return (
     <html lang="en">
       <body className={`${albertSans.className} ${montserratAlternates.variable}`}>
