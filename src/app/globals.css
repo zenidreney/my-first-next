@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  --color-orange-accent: #F77D36;
+}
+
+/* @config "./tailwindconfig.js"; */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
