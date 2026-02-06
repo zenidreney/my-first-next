@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import NavLink from "./NavLink";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import NavLink from "./NavLink";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -34,12 +33,12 @@ export default function Navbar() {
           </div>
         </Link>
         <ul className="flex items-center gap-2.5">
-          <li className="text-sm uppercase cursor-pointer">
-            <NavLink href="/3d-models">3D Models</NavLink>
-          </li>
-          <li className="text-sm uppercase cursor-pointer">
-            <NavLink href="/about">About</NavLink>
-          </li>
+          <NavLink href="/3d-models" isActive={pathname === "/3d-models"}>
+            3D Models
+          </NavLink>
+          <NavLink href="/about" isActive={pathname === "/about"}>
+            About
+          </NavLink>
         </ul>
       </nav>
     </header>
