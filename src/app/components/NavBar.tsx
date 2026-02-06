@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import NavLink from "./NavLink";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+
 
 export default function Navbar() {
+  const pathname = usePathname();
+  console.log(pathname);
+
   return (
     <header className="w-full bg-white">
       <nav className="flex justify-between px-6 py-4">
